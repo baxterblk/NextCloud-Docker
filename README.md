@@ -10,6 +10,7 @@ This repository contains a Docker-based deployment configuration for NextCloud w
 - Optimized PHP settings for large file handling
 - Automatic HTTPS support
 - Memory-optimized Redis configuration
+- Custom Apache configuration for request limits
 
 ## Prerequisites
 
@@ -40,7 +41,7 @@ NEXTCLOUD_TRUSTED_DOMAINS=your.domain.com your.ip.address
 
 4. Create required directories:
 ```bash
-mkdir -p nextcloud_data nextcloud_db redis_data apache-config
+mkdir -p nextcloud_data nextcloud_db redis_data
 ```
 
 5. Start the containers:
@@ -79,6 +80,8 @@ The deployment includes several performance optimizations:
 .
 ├── docker-compose.yml    # Docker Compose configuration
 ├── .env                 # Environment configuration
+├── apache-config/       # Apache configuration files
+│   └── apache-limits.conf  # Custom Apache limits configuration
 ├── nextcloud_data/      # NextCloud data directory
 ├── nextcloud_db/        # PostgreSQL data directory
 └── redis_data/         # Redis data directory
@@ -137,7 +140,3 @@ docker-compose up -d
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
