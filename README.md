@@ -2,6 +2,8 @@
 
 This repository contains a Docker-based deployment configuration for NextCloud with PostgreSQL and Redis. The setup includes optimized configurations for handling large files and improved performance.
 
+[![Build Status](https://your-gitea-instance/api/v1/repos/username/repository/badges/main)](https://your-gitea-instance/username/repository/actions)
+
 ## Features
 
 - NextCloud with Apache
