@@ -2,8 +2,6 @@
 
 This repository contains a Docker-based deployment configuration for NextCloud with PostgreSQL and Redis. The setup includes optimized configurations for handling large files and improved performance.
 
-[![Build Status](https://your-gitea-instance/api/v1/repos/username/repository/badges/main)](https://your-gitea-instance/username/repository/actions)
-
 ## Features
 
 - NextCloud with Apache
@@ -66,6 +64,23 @@ Key configuration options in `.env`:
 - `PHP_MEMORY_LIMIT`: PHP memory limit (default: 4096M)
 - `PHP_UPLOAD_LIMIT`: Maximum upload file size (default: 16G)
 - `NEXTCLOUD_PORT`: Port to expose NextCloud on (default: 8080)
+
+### Proxy Configuration
+
+If using a proxy manager, additional configurations are required. Please refer to official documentation for service specific configurations. If using NGINX Proxy Manager, add the following to the 'Advanced Tab' of the NextCloud Proxy entry:
+
+```nginx
+client_max_body_size 17G;
+client_body_buffer_size 512k;
+fastcgi_read_timeout 3600;
+fastcgi_send_timeout 3600;
+fastcgi_connect_timeout 3600;
+proxy_read_timeout 3600;
+proxy_connect_timeout 3600;
+proxy_send_timeout 3600;
+proxy_request_buffering off;
+proxy_buffering off;
+```
 
 ### Performance Optimizations
 
@@ -142,3 +157,7 @@ docker-compose up -d
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
