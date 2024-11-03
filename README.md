@@ -40,7 +40,7 @@ NEXTCLOUD_TRUSTED_DOMAINS=your.domain.com your.ip.address
 
 4. Create required directories:
 ```bash
-mkdir -p nextcloud_data nextcloud_db redis_data
+mkdir -p nextcloud_data nextcloud_db redis_data apache-config
 ```
 
 5. Start the containers:
