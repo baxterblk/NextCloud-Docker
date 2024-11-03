@@ -50,18 +50,18 @@ $CONFIG = array (
   'allow_frame_loading' => true,
   'overwriteprotocol' => 'https',
   'overwritehost' => 'your.domain.com',
-  'overwritehost' => 'storage.blakbox.vip',
+  'overwritehost' => 'your.domain.com',
   'overwritecondaddr' => '^192\\.168\\.50\\.',
   'trusted_proxies' => 
   array (
-    0 => '192.168.50.246',
-    1 => '192.168.50.185',
+    0 => 'LAN_IP',
+    1 => 'LAN_IP',
   ),
   'forwarded_for_headers' => 
   array (
     0 => 'HTTP_X_FORWARDED_FOR',
   ),
-  'frame_ancestors' => '\'self\' https://storage.blakbox.vip http://192.168.50.246:8080 http://192.168.50.185 https://*.blakbox.vip',
+  'frame_ancestors' => '\'self\' https://my.domain.com http://lan_ip:port https://*.domain.com',
   'app_install_overwrite' => 
   array (
     0 => 'files_external_gdrive',
